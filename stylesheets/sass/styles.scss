@@ -15,6 +15,9 @@ html, body, .container{height: 100%;}
     p{line-height: 23px;
       .strike{text-decoration: line-through;}
     }
+
+    /* NOTE: ADD STYLE FOR MOBILE IMPLEMENTATION, TOO */
+
     #github{margin-left: 311px;}
     #twitter{margin-left: 315px;}
     #rdio{margin-left: 315px;}
@@ -44,9 +47,10 @@ body.mobile{overflow:hidden;
     #twitter{margin-left: 85px;}
     #rdio{margin-left: 85px;}
     #blog{margin-left: 88px;}
-    #facebook{margin-left: 80px;}
-    #linkedin{margin-left: 63px;}
-    #gmail{margin-left: 51px;}
+    #facebook{margin-left: 81px;}
+    #linkedin{margin-left: 64px;}
+    #qrcardus{margin-left: 91px;}
+    #gmail{margin-left: 85px;}
   }
   #high-fives{bottom: 30px;}
 }
