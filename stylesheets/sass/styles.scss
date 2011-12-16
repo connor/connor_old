@@ -1,6 +1,6 @@
 @import "reset";
 
-html, body, .container{height: 100%;}
+html, body, .container{height: 100%; font-family: "Museo Slab";}
 
 .container{width: 782px; margin: 0 auto; font-weight: 300; position: relative;
   &.hidden{display:none;}
@@ -15,9 +15,9 @@ html, body, .container{height: 100%;}
     p{line-height: 23px;
       .strike{text-decoration: line-through;}
     }
-    #github{margin-left: 287px;}
+    #github{margin-left: 331px;}
     #twitter{margin-left: 335px;}
-    #rdio{margin-left: 265px;}
+    #rdio{margin-left: 334px;}
     #blog{margin-left: 339px;}
     #facebook{margin-left: 331px;}
     #linkedin{margin-left: 314px;}
