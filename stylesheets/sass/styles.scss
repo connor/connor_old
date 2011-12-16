@@ -1,0 +1,51 @@
+@import "reset";
+
+html, body, .container{height: 100%;}
+
+.container{width: 782px; margin: 0 auto; font-weight: 300; position: relative;
+  &.hidden{display:none;}
+  #header{text-align: center;
+    #logo{font-size: 39px; color:#000000; text-align: center;}
+    #subhead{font-size: 20px; color:#919191; font-weight: 300; margin-top: 6px;
+      .super{font-size: 15px; position: relative; top: -6px;}
+    }
+  }
+
+  #main{font-size: 16px; color:#919191; line-height: 23px;
+    p{line-height: 23px;
+      .strike{text-decoration: line-through;}
+    }
+    #github{margin-left: 287px;}
+    #twitter{margin-left: 335px;}
+    #rdio{margin-left: 265px;}
+    #blog{margin-left: 339px;}
+    #facebook{margin-left: 331px;}
+    #linkedin{margin-left: 314px;}
+    #gmail{margin-left: 301px;}
+    a{text-decoration: none; color: #2576e5; cursor: pointer;
+      &:hover{text-decoration: underline;}
+    }
+  }
+
+  #high-fives{color: #919191; font-size: 12px; font-weight: 300; position: absolute; bottom: 20px; right: 0;}
+}
+
+
+body.mobile{overflow:hidden;
+  .container{width: 95%; margin:0 auto; padding-top: 20px; overflow:hidden;}
+  #header {
+    #logo{font-size: 26px;}
+    #subhead{font-size: 17px; margin-top: 4px;}
+  }
+  #main{font-size: 16px; margin-top: 50px;
+    p{line-height: 20px;}
+    #github{margin-left: 57px;}
+    #twitter{margin-left: 105px;}
+    #rdio{margin-left: 34px;}
+    #blog{margin-left: 108px;}
+    #facebook{margin-left: 100px;}
+    #linkedin{margin-left: 83px;}
+    #gmail{margin-left: 71px;}
+  }
+  #high-fives{bottom: 30px;}
+}
