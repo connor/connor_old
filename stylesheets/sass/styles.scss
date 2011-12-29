@@ -4,14 +4,12 @@ html, body, .container{height: 100%;}
 
 .container{width: 782px; margin: 0 auto; font-weight: 300; position: relative;
   &.hidden{display:none;}
-  #header{text-align: center;
     #logo{font-size: 39px; color:#000000; text-align: center;}
-    #subhead{font-size: 20px; color:#919191; font-weight: 300; margin-top: 6px;
+    #subhead{font-size: 20px; color:#919191; font-weight: 300; margin-top: 6px; text-align: center;
       .super{font-size: 15px; position: relative; top: -6px;}
     }
-  }
 
-  #main{font-size: 16px; color:#919191; line-height: 23px;
+  #main{font-size: 16px; color:#919191; line-height: 23px;;
     p{line-height: 23px;
       .strike{text-decoration: line-through;}
     }
@@ -32,6 +30,42 @@ html, body, .container{height: 100%;}
   }
 
   #high-fives{color: #919191; font-size: 12px; font-weight: 300; position: absolute; bottom: 20px; right: 0;}
+
+  &.blog{width: 600px;
+    #sm-logo{margin-top: 45px; font-size: 14px; font-weight: normal; color:#999999;
+      a{text-decoration:none; color:#000000; font-weight: 600;
+        &:hover{text-decoration: underline;}
+      }
+    }
+
+    #main{font-size: 16px; color: #919191; line-height: 23px; clear: both; overflow: hidden; margin-top: 120px; font-weight: normal;
+      .title{color: #000000; text-align: left; font-size: 39px; padding: 5px 0;}
+      .meta{margin-bottom: 30px; text-align: left; font-weight: 100; font-size: 14px; margin-top: 3px;}
+      p{line-height: 24px; color: #777; margin-bottom: 20px;
+      }
+      blockquote{border-left: 1px solid #DEDEDE; padding: 20px; color: #111; font-size: 21px; margin: 35px 0; line-height: 28px;}
+	  blockquote p{margin-bottom: 0; color: #111;}
+      strong{color:#000000;}
+      figure{margin: 35px 0;
+        figcaption{margin-top: -6px; padding-top: 0; text-align: center; font-size: 14px;}
+      }
+      .gist{font-size: 13px; line-height: 18px; margin: 35px 0;}
+      h3{margin: 35px 0; color: #000000;}
+      .bottom-nav-links{height: 21px; display:block;
+        .bottom-nav-link{font-size: 14px;
+          &#prev-link{float:left;}
+          &#next-link{float:right;}
+        }
+      }
+      .post-footer{font-size: 14px; text-align: left; border-top: 1px solid #DEDEDE; margin-top: 50px; padding: 35px 0; margin-bottom: 20px;}
+      .posts{
+        li{font-weight: 300; font-size: 13px;
+          span{font-weight: 300; font-size: 13px;}
+          a{font-weight: normal; font-size: 14px;}
+        }
+      }
+    }
+  }
 }
 
 

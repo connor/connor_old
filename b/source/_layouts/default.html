@@ -1,0 +1,22 @@
+{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
+{% include head.html %}
+<body class="tk-proxima-nova">
+
+  <div class="container blog">
+    <header id="header">
+      <h1 id="sm-logo">Hey there, I'm <a href="/">Connor Montgomery</a>.
+        This is my <a href="/b">blog</a>.</h1>
+    </header>
+
+    <article id="main">
+      {{ content | expand_urls: root_url }}
+      <footer role="contentinfo">{% include footer.html %}</footer>
+    </article>
+  </div>
+
+</body>
+
+  <script defer src="/js/ender.min.js"></script>
+  <script defer src="/js/script.js"></script>
+
+</html>
