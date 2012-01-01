@@ -1,0 +1,198 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a{
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    cursor:pointer;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+html, body, .container{height: 100%;}
+
+.container{width: 782px; margin: 0 auto; font-weight: 300; position: relative;
+  &.hidden{display:none;}
+    #logo{font-size: 39px; color:#000000; text-align: center;}
+    #subhead{font-size: 20px; color:#919191; font-weight: 300; margin-top: 6px; text-align: center;
+      .super{font-size: 15px; position: relative; top: -6px;}
+    }
+
+  #main{font-size: 16px; color:#919191; line-height: 23px;;
+    p{line-height: 23px;
+      .strike{text-decoration: line-through;}
+    }
+
+    /* NOTE: ADD STYLE FOR MOBILE IMPLEMENTATION, TOO */
+
+    #github{margin-left: 311px;}
+    #twitter{margin-left: 315px;}
+    #rdio{margin-left: 315px;}
+    #blog{margin-left: 324px;}
+    #facebook{margin-left: 311px;}
+    #linkedin{margin-left: 294px;}
+    #qrcardus{margin-left: 320px;}
+    #gmail{margin-left: 300px;}
+    a{text-decoration: none; color: #2576e5; cursor: pointer;
+      &:hover{text-decoration: underline;}
+    }
+  }
+
+  #high-fives{color: #919191; font-size: 12px; font-weight: 300; position: absolute; bottom: 20px; right: 0;}
+
+  &.blog{width: 600px;
+    #sm-logo{margin-top: 45px; font-size: 14px; font-weight: normal; color:#999999;
+      a{text-decoration:none; color:#000000; font-weight: 600; cursor:pointer;
+        &:hover{text-decoration: underline;}
+      }
+    }
+
+    #main{font-size: 16px; color: #919191; line-height: 23px; clear: both; overflow: hidden; margin-top: 120px; font-weight: normal;
+      .title{color: #000000; text-align: left; font-size: 39px; padding: 5px 0; line-height: 36px;}
+      .meta{margin-bottom: 30px; text-align: left; font-weight: 100; font-size: 14px; margin-top: 3px; color: #999999;}
+      p{line-height: 24px; color: #777; margin-bottom: 20px;
+      }
+      blockquote{border-left: 1px solid #DEDEDE; padding: 20px; color: #111; font-size: 21px; margin: 35px 0; line-height: 28px;}
+    blockquote p{margin-bottom: 0; color: #111;}
+      strong{color:#000000;}
+      figure{margin: 35px 0;
+        figcaption{padding-top: 0; text-align: center; font-size: 14px;}
+        img{margin-left: auto; margin-right: auto; display: block; margin-bottom: 10px;}
+      }
+      .gist{font-size: 13px; line-height: 18px; margin: 35px 0;}
+      h3{margin: 35px 0; color: #000000;
+        &.small-margins{margin:0 0 10px 0;}
+      }
+      .bottom-nav-links{height: 21px; display:block;
+        .bottom-nav-link{font-size: 14px;
+          &#prev-link{float:left;}
+          &#next-link{float:right;}
+        }
+      }
+      .post-footer{font-size: 14px; text-align: left; border-top: 1px solid #DEDEDE; margin-top: 50px; padding: 35px 0; margin-bottom: 20px; line-height: 21px;}
+      .posts{
+        li{font-weight: 300; font-size: 19px;
+          &.pending{background:#f9fca5;}
+          span{font-weight: 300; font-size: 13px;}
+          a{font-weight: normal; font-size: 14px;}
+        }
+      }
+    }
+  }
+}
+
+
+body.mobile{
+  .container{width: 95%; margin:0 auto; padding-top: 20px; overflow:hidden;
+    &.blog{overflow-y: scroll;-webkit-text-size-adjust: none;}
+  }
+  #header {
+    #logo{font-size: 26px;}
+    #subhead{font-size: 17px; margin-top: 4px;}
+  }
+  #main{font-size: 16px; margin-top: 50px;
+    p{line-height: 20px;}
+    #github{margin-left: 80px;}
+    #twitter{margin-left: 85px;}
+    #rdio{margin-left: 85px;}
+    #blog{margin-left: 94px;}
+    #facebook{margin-left: 81px;}
+    #linkedin{margin-left: 64px;}
+    #qrcardus{margin-left: 91px;}
+    #gmail{margin-left: 70px;}
+  }
+  #high-fives{bottom: 30px;}
+}

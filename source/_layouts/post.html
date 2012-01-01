@@ -1,0 +1,23 @@
+---
+layout: default
+single: true
+---
+
+{% include article.html %}
+
+<p class="bottom-nav-links">
+  {% if page.previous.url %}
+    <span id="prev-link" class="bottom-nav-link">
+    <a class="basic-alignment left" href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&larr; {{page.previous.title}}</a>
+    </span>
+  {% endif %}
+  {% if page.next.url %}
+    <span id="next-link" class="bottom-nav-link">
+      <a class="basic-alignment right" href="{{page.next.url}}" title="next Post: {{page.next.title}}">{{page.next.title}} &rarr;</a>
+    </span>
+  {% endif %}
+</p>
+
+{% if !index %}
+  {% include footer.html %}
+{% endif %}
