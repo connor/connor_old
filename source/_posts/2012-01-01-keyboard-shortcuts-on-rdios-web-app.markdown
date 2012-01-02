@@ -17,13 +17,12 @@ Well, with a little hacking on a great
 [project](https://github.com/borismus/keysocket/) put together by [Boris
 Smus](http://smus.com/), it's now possible (Mac Only for now).
 
-### Instructions on how to add keyboard shortcuts to Rdio's web app
+### How to add keyboard shortcuts to Rdio's web app
 
 #### Pre-requisites
 
 1. First, you'll want to clone [his repo](https://github.com/borismus/keysocket/).
-If you don't know how to do that, simply run the following command from
-the terminal:
+To do so, simply run the following command from the terminal:
 
     ```
     git clone https://github.com/borismus/keysocket.git
@@ -43,13 +42,13 @@ system boots.
 1. Now it's time to hack. Open up a terminal and `cd` into `/extension`
 within the project directory.
 
-2. Next, create a file for the rdio adapter. To do so, run
+2. Next, create a file for the rdio adapter. To do so, run:
 
     ```
     touch keysocket-rdio.js
     ```
 
-3. Now, open up the `keysocket-rdio.js` file, and put the following code
+3. Now, open up the `keysocket-rdio.js` file you just created, and put the following code
    in there (I will explain it later on in the post):
 
 <script src="https://gist.github.com/1548707.js"> </script>

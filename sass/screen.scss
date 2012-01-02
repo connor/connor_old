@@ -104,6 +104,8 @@ input, select {
 
 html, body, .container{height: 100%;}
 
+.hidden{display:none;}
+
 .container{width: 782px; margin: 0 auto; font-weight: 300; position: relative;
   &.hidden{display:none;}
     #logo{font-size: 39px; color:#000000; text-align: center;}
@@ -118,7 +120,7 @@ html, body, .container{height: 100%;}
 
     /* NOTE: ADD STYLE FOR MOBILE IMPLEMENTATION, TOO */
 
-    #github{margin-left: 311px;}
+    #github{margin-left: 310px;}
     #twitter{margin-left: 315px;}
     #rdio{margin-left: 315px;}
     #blog{margin-left: 324px;}
@@ -185,7 +187,14 @@ html, body, .container{height: 100%;}
 
 body.mobile{
   .container{width: 95%; margin:0 auto; padding-top: 20px; overflow:hidden;
-    &.blog{overflow-y: scroll;-webkit-text-size-adjust: none;}
+    &.blog{overflow-y: scroll;-webkit-text-size-adjust: none;
+      #sm-logo{margin-top: 10px;}
+      #main{margin-top: 40px;
+        .title{font-size: 28px;}
+        .meta{margin-bottom: 10px;}
+        .toggleGist{text-align:center; background:#efefef; font-size: 13px; font-weight: bold;}
+      }
+    }
   }
   #header {
     #logo{font-size: 26px;}

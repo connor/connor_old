@@ -4,7 +4,7 @@
   <title><![CDATA[Connor Montgomery]]></title>
   <link href="http://cnnr.me//atom.xml" rel="self"/>
   <link href="http://cnnr.me//"/>
-  <updated>2012-01-01T18:52:05-06:00</updated>
+  <updated>2012-01-02T17:45:49-06:00</updated>
   <id>http://cnnr.me//</id>
   <author>
     <name><![CDATA[Connor Montgomery]]></name>
@@ -18,9 +18,7 @@
     <link href="http://cnnr.me//b/2012/01/keyboard-shortcuts-on-rdios-web-app/"/>
     <updated>2012-01-01T14:16:00-06:00</updated>
     <id>http://cnnr.me//b/2012/01/keyboard-shortcuts-on-rdios-web-app</id>
-    <content type="html"><![CDATA[<p>(note: feel free to discuss this post on <a href="http://news.ycombinator.com/item?id=3414318">Hacker News</a>.)</p>
-
-<p>Call me crazy, but most of the time when I can use a web app over a
+    <content type="html"><![CDATA[<p>Call me crazy, but most of the time when I can use a web app over a
 native app, I prefer the web app. Maybe some of you do, too.</p>
 
 <p>Anyways, one of my favorite web apps is <a href="http://rdio.com">Rdio</a>. I
@@ -30,14 +28,13 @@ Well, with a little hacking on a great
 <a href="https://github.com/borismus/keysocket/">project</a> put together by <a href="http://smus.com/">Boris
 Smus</a>, it&#8217;s now possible (Mac Only for now).</p>
 
-<h3>Instructions on how to add keyboard shortcuts to Rdio&#8217;s web app</h3>
+<h3>How to add keyboard shortcuts to Rdio&#8217;s web app</h3>
 
 <h4>Pre-requisites</h4>
 
 <ol>
 <li><p>First, you&#8217;ll want to clone <a href="https://github.com/borismus/keysocket/">his repo</a>.
-If you don&#8217;t know how to do that, simply run the following command from
-the terminal:</p>
+To do so, simply run the following command from the terminal:</p>
 
 <p>  <code>
   git clone https://github.com/borismus/keysocket.git
@@ -57,12 +54,12 @@ system boots.</p></li>
 <ol>
 <li><p>Now it&#8217;s time to hack. Open up a terminal and <code>cd</code> into <code>/extension</code>
 within the project directory.</p></li>
-<li><p>Next, create a file for the rdio adapter. To do so, run</p>
+<li><p>Next, create a file for the rdio adapter. To do so, run:</p>
 
 <p> <code>
  touch keysocket-rdio.js
 </code></p></li>
-<li><p>Now, open up the <code>keysocket-rdio.js</code> file, and put the following code
+<li><p>Now, open up the <code>keysocket-rdio.js</code> file you just created, and put the following code
 in there (I will explain it later on in the post):</p></li>
 </ol>
 
@@ -149,6 +146,176 @@ out my <a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-i-made-the
 <code>*</code> is required, becuase it&#8217;s a wildcard character. Basically, that
 means the <code>keysocket-rdio.js</code> file will load at any path within
 <code>http://rdio.com</code>, not just the root path.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Want to sync all of your Rdio songs to mobile? Now you can.]]></title>
+    <link href="http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can/"/>
+    <updated>2012-01-01T14:01:00-06:00</updated>
+    <id>http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[On Being Humble]]></title>
+    <link href="http://cnnr.me//b/2011/12/on-humility/"/>
+    <updated>2011-12-30T00:44:00-06:00</updated>
+    <id>http://cnnr.me//b/2011/12/on-humility</id>
+    <content type="html"><![CDATA[<p><strong>tl;dr</strong>: After my &#8220;semester&#8221; working in San Francisco, <strong>humility</strong>
+has separated the great from the good.</p>
+
+<hr />
+
+<p>If this &#8220;semester&#8221; off taught me one thing, it&#8217;s best summed up in a
+poster I saw the other day on <a href="http://pinterest.com">pinterest</a>:</p>
+
+<figure>
+  <img src="http://f.cl.ly/items/2D1G3s2S412j1q2Z2e2P/tumblr_lq55rpvIw81qzcrkbo1_500.jpeg">
+  <figcaption><strong>Above:</strong> That says it all, folks.
+</figure>
+
+
+<p>That&#8217;s not a perfect representation (being kind isn&#8217;t the same as
+humility - I know), but you get the point.</p>
+
+<p>While I&#8217;m sure there are a number of successful assholes in the valley
+(I mean <em>real</em> assholes, not those who just <em>seem</em> like assholes), those
+who appear the <strong>most successful</strong> (financially and by the quality of
+their life) are the most humble people I&#8217;ve ever met.</p>
+
+<p>Maybe I&#8217;m biased. I did get to work with people like
+<a href="http://twitter.com/ev">Ev</a>, <a href="http://twitter.com/biz">Biz</a>,
+<a href="http://twitter.com/goldman">Goldman</a>,
+<a href="http://twitter.com/stirman">Stirman</a>,
+<a href="http://twitter.com/jcrosby">Jon</a>, <a href="http://twitter.com/tonystubblebine">Tony</a>,
+Jeremy, <a href="http://twitter.com/dustin">Senos</a>, <a href="http://twitter.com/ded">Diaz</a>,
+<a href="http://twitter.com/jyhsu">Jean</a>, <a href="http://twitter.com/danfuzz">Dan</a> and
+<a href="http://twitter.com/don_neufeld">Don</a>. So, my point of view <em>is</em> a bit biased,
+as these people are all the <strong>very</strong> best in our field.</p>
+
+<p>But still - it&#8217;s mind blowing to see people like these even outside of
+<a href="http://obvious.com">Obvious</a> be so humble and eager to learn from their mistakes and the
+successes of others.</p>
+
+<h3>After my experiences, I truly think humility is a key factor in success</h3>
+
+<p>If you closely examine the <a href="http://theleanstartup.com/principles">Lean Methodology</a>, humility is at the
+core. To fully execute a lean practice, one <strong>has</strong> to be humble and
+willing to learn from failures and the successes of others. The
+<a href="http://lift.do">Lift</a> team would sometimes just stop what we were
+doing, based on user feedback, and throw our progress on that feature
+away. It sucked, and was really hard to do the first few times. But it
+ended up working out well for us, as it pushed us closer to the product
+they are developing today.</p>
+
+<p>But that&#8217;s exactly how the most successful companies get to where they
+are. Crazy how things scale like that, huh?</p>
+
+<h3>Lessons learned from IDEO and LUXr</h3>
+
+<p>One of the (many) perks of being part of <a href="http://obvious.com">Obvious</a>
+was our tour of IDEO in Mountain View. I could (and most likely will)
+have several posts dedicated to the day we spent there. Long story short
+- <a href="http://www.ideo.com/people/david-kelley">David Kelley</a>, the Chairman
+and founder of IDEO, gave us the tour. It was an amazing experience.</p>
+
+<p>In a nutshell, the way their process works is similar to <a href="http://www.startuplessonslearned.com/">Eric Reis</a>&#8217;
+<strong>Build -> Measure -> Learn</strong>, with an emphasis on the <em>build</em>. By that,
+I mean they iterate like there&#8217;s no tomorrow. Their whole culture is
+based on initially generating an insane amount of variations, and to try and think
+outside of the box as much as possible. This mindset is critical when it
+comes to their incredible success designing products.</p>
+
+<figure>
+  <img src="http://theleanstartup.com/images/methodology_diagram.jpg">
+  <figcaption><strong>Above:</strong> Lean uses the &#8220;Build -> Measure -> Learn&#8221; practice</figcaption>
+</figure>
+
+
+<p>But it&#8217;s not <strong>just</strong> relentless iteration. They tie in user feedback
+and testing heavily into their process. <strong>This is where humility ties
+in</strong> - the user feedback and testing. You must put your ego to the curb,
+because in the end - it&#8217;s only going to hurt.</p>
+
+<figure>
+  <img src="http://f.cl.ly/items/141Q1g0i3R0e1l0c0225/IMG_0046.jpg" style="height: 400px;">
+  <figcaption><strong>Above:</strong> The test samples IDEO used when creating the first Microsoft Mouse.
+</figure>
+
+
+<p>Since Lift was part of the <a href="http://luxr.co">LUXr</a> Fall Cohort these past few
+months (which I <em>highly</em> recommend), we got to use these methods in
+practice. Except, they called them a <strong>flair &amp; focus</strong>. Essentially - we
+build/conceptualize several ideas very quickly, test them for a period
+of time on a number of audiences, and then finish implementing which one
+yielded greater results.</p>
+
+<p>If you&#8217;re familiar with Lean, this should be ringing a bell right now.</p>
+
+<p>The key here is that this all felt like a sprint. We&#8217;d work very fast in
+short bursts, and frankly, most of the time, would end up stashing a lot
+of code away. On the surface, this sounds like a waste. In hindsight, it
+was critical in the shaping of Lift, and I&#8217;m so excited to see where
+they go with their knowledge gained from these practices.</p>
+
+<h3>Bringing it all together</h3>
+
+<p>Regardless of whether your company is looking to improve, or you as an
+individual wants to grow and thrive, I&#8217;ve found <strong>being humble helped me
+learn more than I could have ever imagined in this &#8220;semester&#8221; of working</strong>.
+Fortunately, this goes very well with the mindset often found in our
+field that we must always be learning something new. But instead of
+picking something new up, we&#8217;re just sharpening what we&#8217;ve already got.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[It's not all about reliability]]></title>
+    <link href="http://cnnr.me//b/2011/12/its-not-all-about-reliability/"/>
+    <updated>2011-12-30T00:44:00-06:00</updated>
+    <id>http://cnnr.me//b/2011/12/its-not-all-about-reliability</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Thoughts on CSS Preprocessors]]></title>
+    <link href="http://cnnr.me//b/2011/12/thoughts-on-css-preprocessors/"/>
+    <updated>2011-12-30T00:43:00-06:00</updated>
+    <id>http://cnnr.me//b/2011/12/thoughts-on-css-preprocessors</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Test Blog Post]]></title>
+    <link href="http://cnnr.me//b/2011/12/test-blog-post/"/>
+    <updated>2011-12-28T23:47:00-06:00</updated>
+    <id>http://cnnr.me//b/2011/12/test-blog-post</id>
+    <content type="html"><![CDATA[<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, <a href="http://cnnr.me">nascetur ridiculus</a> mus. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+<h3>Breaking up some of my thoughts with a subhead</h3>
+
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+
+<blockquote><p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p></blockquote>
+
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+
+<figure>
+  <img src="../images/img.png">
+  <figcaption><strong>Above:</strong> This is an image of a bicicle.</figcaption>
+</figure>
+
+
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+
+<script src="https://gist.github.com/1218637.js?file=newSite.sh"></script>
+
+
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 ]]></content>
   </entry>
   
