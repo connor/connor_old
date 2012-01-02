@@ -149,6 +149,11 @@ html, body, .container{height: 100%;}
     blockquote p{margin-bottom: 0; color: #111;}
       strong{color:#000000;}
       figure{margin: 35px 0;
+        &.code{margin: 20px 0 20px 20px;
+          table{width: 100%;}
+          .gutter{display:none;}
+          code{padding: 5px 10px; display:block; width: 100%; border: 1px solid #cccccc;}
+        }
         figcaption{padding-top: 0; text-align: center; font-size: 14px;}
         img{margin-left: auto; margin-right: auto; display: block; margin-bottom: 10px;}
       }
@@ -156,7 +161,10 @@ html, body, .container{height: 100%;}
       h3{margin: 35px 0; color: #000000;
         &.small-margins{margin:0 0 10px 0;}
       }
-      .bottom-nav-links{height: 21px; display:block;
+      h4{color: #333; font-size: 13px; text-transform: uppercase;}
+      code {display:inline; padding: 2px 5px; color: #000000; font-size: 13px; background: #efefef}
+      li{margin-left: 35px;}
+      .bottom-nav-links{height: 21px; display:block; margin-top: 45px;
         .bottom-nav-link{font-size: 14px;
           &#prev-link{float:left;}
           &#next-link{float:right;}
@@ -164,7 +172,7 @@ html, body, .container{height: 100%;}
       }
       .post-footer{font-size: 14px; text-align: left; border-top: 1px solid #DEDEDE; margin-top: 50px; padding: 35px 0; margin-bottom: 20px; line-height: 21px;}
       .posts{
-        li{font-weight: 300; font-size: 19px;
+        li{font-weight: 300; font-size: 19px; margin: 0;
           &.pending{background:#f9fca5;}
           span{font-weight: 300; font-size: 13px;}
           a{font-weight: normal; font-size: 14px;}
