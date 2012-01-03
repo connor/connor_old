@@ -164,7 +164,7 @@ html, body, .container{height: 100%;}
         &.small-margins{margin:0 0 10px 0;}
       }
       h4{color: #333; font-size: 13px; text-transform: uppercase;}
-      code {display:inline; padding: 2px 5px; color: #000000; font-size: 13px; background: #efefef}
+      code {display:inline; padding: 2px 5px; color: #000000; font-size: 13px; background: #FEF8C4; border: 1px solid #D8D566;}
       li{margin-left: 35px;}
       .bottom-nav-links{height: 21px; display:block; margin-top: 45px;
         .bottom-nav-link{font-size: 14px;
@@ -187,12 +187,13 @@ html, body, .container{height: 100%;}
 
 body.mobile{
   .container{width: 95%; margin:0 auto; padding-top: 20px; overflow:hidden;
-    &.blog{overflow-y: scroll;-webkit-text-size-adjust: none;
+    &.blog{overflow-y: scroll;-webkit-text-size-adjust: none; padding-top: 0;
       #sm-logo{margin-top: 10px;}
-      #main{margin-top: 40px;
+      #main{margin-top: 40px; font-size: 14px;
         .title{font-size: 28px;}
-        .meta{margin-bottom: 10px;}
-        .toggleGist{text-align:center; background:#efefef; font-size: 13px; font-weight: bold;}
+        .meta{margin-bottom: 10px; font-size: 14px;}
+        .scrollGist{text-align:center; background:#efefef; font-size: 13px; font-weight: bold; margin-bottom: 3px;}
+        p{line-height: 20px;}
       }
     }
   }
