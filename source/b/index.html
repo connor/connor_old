@@ -14,7 +14,7 @@ date: 2011-12-29 11:34
     <li {% if post.published == false %} class="pending" {% endif %}>
       <span class="tk-museo-slab">{{ post.date | date: "%d %b %Y" }}</span> »
       {% if post.external-url %}
-        <a href="{{ post.external-url }}" target="_blank">{{ post.title }} [link]</a>
+        <a href="{{ post.external-url }}" target="_blank">[link] {{ post.title }}</a>
       {% else %}
         <a href="{{ post.url }}">{{ post.title }}</a>
       {% endif %}
