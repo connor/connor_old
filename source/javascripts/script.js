@@ -15,12 +15,6 @@ if (!('createTouch' in document) || ($(window).width() >= 768)) {
 else {
 
   $('body').addClass('mobile')
-
-  function addGistTwoFingerMessage() {
-    return "<p class='scrollGist'><strong>Note:</strong> please scroll gist with two fingers.</p>"
-  }
-
-  $('.mobile .gist').before( addGistTwoFingerMessage() )
   $('.container').removeClass('hidden')
 
 }
