@@ -4,7 +4,7 @@
   <title><![CDATA[Connor Montgomery]]></title>
   <link href="http://cnnr.me//atom.xml" rel="self"/>
   <link href="http://cnnr.me//"/>
-  <updated>2012-01-09T12:22:30-06:00</updated>
+  <updated>2012-01-09T12:28:36-06:00</updated>
   <id>http://cnnr.me//</id>
   <author>
     <name><![CDATA[Connor Montgomery]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Play all rdio songs on mobile... kind of.]]></title>
+    <link href="http://cnnr.me//b/2012/01/play-all-rdio-songs-on-mobile-dot-dot-dot-kind-of/"/>
+    <updated>2012-01-03T12:24:00-06:00</updated>
+    <id>http://cnnr.me//b/2012/01/play-all-rdio-songs-on-mobile-dot-dot-dot-kind-of</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sync all Rdio songs to mobile]]></title>
+    <link href="http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can/"/>
+    <updated>2012-01-02T14:01:00-06:00</updated>
+    <id>http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve always wanted to just be able to shuffle through my entire
+collection on Rdio&#8217;s mobile app. While it&#8217;s on their timeline, it&#8217;s not
+currently implemented.</p>
+
+<p>This is a (super) hacky way to accomplish what I wanted. Essentially, it
+creates two playlists:</p>
+
+<ol>
+<li>All songs in your collection</li>
+<li>All songs sync&#8217;d to mobile</li>
+</ol>
+
+
+<p>From there, you can shuffle through them :D</p>
+
+<p>Check it out here: https://github.com/connormontgomery/sync-all-rdio-songs</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Keyboard shortcuts on Rdio]]></title>
@@ -146,15 +179,6 @@ out my <a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-i-made-the
 <code>*</code> is required, becuase it&#8217;s a wildcard character. Basically, that
 means the <code>keysocket-rdio.js</code> file will load at any path within
 <code>http://rdio.com</code>, not just the root path.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Sync all Rdio songs to mobile [link]]]></title>
-    <link href="http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can/"/>
-    <updated>2012-01-01T14:01:00-06:00</updated>
-    <id>http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
