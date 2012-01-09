@@ -4,7 +4,7 @@
   <title><![CDATA[Connor Montgomery]]></title>
   <link href="http://cnnr.me//atom.xml" rel="self"/>
   <link href="http://cnnr.me//"/>
-  <updated>2012-01-03T15:40:25-06:00</updated>
+  <updated>2012-01-09T12:22:30-06:00</updated>
   <id>http://cnnr.me//</id>
   <author>
     <name><![CDATA[Connor Montgomery]]></name>
@@ -146,6 +146,15 @@ out my <a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-i-made-the
 <code>*</code> is required, becuase it&#8217;s a wildcard character. Basically, that
 means the <code>keysocket-rdio.js</code> file will load at any path within
 <code>http://rdio.com</code>, not just the root path.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sync all Rdio songs to mobile [link]]]></title>
+    <link href="http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can/"/>
+    <updated>2012-01-01T14:01:00-06:00</updated>
+    <id>http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can</id>
+    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
