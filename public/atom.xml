@@ -4,7 +4,7 @@
   <title><![CDATA[Connor Montgomery]]></title>
   <link href="http://cnnr.me//atom.xml" rel="self"/>
   <link href="http://cnnr.me//"/>
-  <updated>2012-01-09T12:28:36-06:00</updated>
+  <updated>2012-01-09T12:34:36-06:00</updated>
   <id>http://cnnr.me//</id>
   <author>
     <name><![CDATA[Connor Montgomery]]></name>
@@ -18,17 +18,8 @@
     <link href="http://cnnr.me//b/2012/01/play-all-rdio-songs-on-mobile-dot-dot-dot-kind-of/"/>
     <updated>2012-01-03T12:24:00-06:00</updated>
     <id>http://cnnr.me//b/2012/01/play-all-rdio-songs-on-mobile-dot-dot-dot-kind-of</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Sync all Rdio songs to mobile]]></title>
-    <link href="http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can/"/>
-    <updated>2012-01-02T14:01:00-06:00</updated>
-    <id>http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can</id>
     <content type="html"><![CDATA[<p>I&#8217;ve always wanted to just be able to shuffle through my entire
-collection on Rdio&#8217;s mobile app. While it&#8217;s on their timeline, it&#8217;s not
+collection on Rdio&#8217;s mobile app. While it&#8217;s on their <a href="http://help.rdio.com/customer/portal/questions/50582-when-will-i-be-able-to-play-my-collection-" target="_blank">timeline</a>, it&#8217;s not
 currently implemented.</p>
 
 <p>This is a (super) hacky way to accomplish what I wanted. Essentially, it
@@ -40,9 +31,22 @@ creates two playlists:</p>
 </ol>
 
 
-<p>From there, you can shuffle through them :D</p>
+<p>From there, you can shuffle through them, just like you&#8217;ve always wanted
+to.</p>
 
-<p>Check it out here: https://github.com/connormontgomery/sync-all-rdio-songs</p>
+<p>Check it out here: <a href="https://github.com/connormontgomery/sync-all-rdio-songs">https://github.com/connormontgomery/sync-all-rdio-songs</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sync all Rdio songs to mobile]]></title>
+    <link href="http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can/"/>
+    <updated>2012-01-02T14:01:00-06:00</updated>
+    <id>http://cnnr.me//b/2012/01/want-to-sync-all-of-your-rdio-songs-to-mobile-now-you-can</id>
+    <content type="html"><![CDATA[<p>Want a simple way to automatically sync all of the Rdio songs in your
+collection to mobile?</p>
+
+<p><a href="https://github.com/connormontgomery/sync-all-rdio-songs">Here you go</a> :D</p>
 ]]></content>
   </entry>
   
