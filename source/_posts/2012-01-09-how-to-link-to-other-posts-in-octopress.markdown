@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to link to other posts in octopress"
+title: "How to link to external posts in octopress"
 date: 2012-01-09 13:49
 comments: false
 external-url: 
@@ -18,19 +18,19 @@ As you can see <a href="https://github.com/imathis/octopress/issues/119#issuecom
 
 <script src="https://gist.github.com/1584630.js"> </script>
 
+As you can see, I'm simply adding an `external-url` attribute, and if I
+want to link to a post that is at a different URL, I just put the URL in
+there.
+
 Now, you may have noticed that I also gave the post some content. That's
 becuase with my custom theme, I have links to the previous/next posts
 after the current post. If one of those links happens to be a post that
 uses an `external-url`, I'd like to give them some context on my own
 site before sending them off to another one.
 
-As you can see, I'm simply adding an `external-url` attribute, and if I
-want to link to a post that is at a different URL, I just put the URL in
-there.
-
 ### Okay, it's not all in the YAML
 
-Now, we just need to adjust the index page that loops through and lists
+There's actually one more step. We just have to adjust the index page that loops through and lists
 all of your posts (most likely `source/index.html`).
 
 All you need to do is check to see if `post.external-url` exists. See

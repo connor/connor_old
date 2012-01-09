@@ -4,7 +4,7 @@
   <title><![CDATA[Connor Montgomery]]></title>
   <link href="http://cnnr.me//atom.xml" rel="self"/>
   <link href="http://cnnr.me//"/>
-  <updated>2012-01-09T14:07:09-06:00</updated>
+  <updated>2012-01-09T16:17:08-06:00</updated>
   <id>http://cnnr.me//</id>
   <author>
     <name><![CDATA[Connor Montgomery]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[How to link to other posts in octopress]]></title>
+    <title type="html"><![CDATA[How to link to external posts in octopress]]></title>
     <link href="http://cnnr.me//b/2012/01/how-to-link-to-other-posts-in-octopress/"/>
     <updated>2012-01-09T13:49:00-06:00</updated>
     <id>http://cnnr.me//b/2012/01/how-to-link-to-other-posts-in-octopress</id>
@@ -29,19 +29,19 @@
 <script src="https://gist.github.com/1584630.js"> </script>
 
 
+<p>As you can see, I&#8217;m simply adding an <code>external-url</code> attribute, and if I
+want to link to a post that is at a different URL, I just put the URL in
+there.</p>
+
 <p>Now, you may have noticed that I also gave the post some content. That&#8217;s
 becuase with my custom theme, I have links to the previous/next posts
 after the current post. If one of those links happens to be a post that
 uses an <code>external-url</code>, I&#8217;d like to give them some context on my own
 site before sending them off to another one.</p>
 
-<p>As you can see, I&#8217;m simply adding an <code>external-url</code> attribute, and if I
-want to link to a post that is at a different URL, I just put the URL in
-there.</p>
-
 <h3>Okay, it&#8217;s not all in the YAML</h3>
 
-<p>Now, we just need to adjust the index page that loops through and lists
+<p>There&#8217;s actually one more step. We just have to adjust the index page that loops through and lists
 all of your posts (most likely <code>source/index.html</code>).</p>
 
 <p>All you need to do is check to see if <code>post.external-url</code> exists. See
