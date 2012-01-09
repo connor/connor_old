@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Move the Web Forward - Connor Montgomery</title>
+  <title>How to link to other posts in octopress - Connor Montgomery</title>
 
   <meta name="description" content="Connor Montgomery is a Developer, CS Student, and Frat Boy.">
   <meta name="author" content="Connor Montgomery">
@@ -37,14 +37,44 @@
     <article id="main">
       <header>
 
-  <h2 class="title">Move the Web Forward</h2>
-  <h3 class="tk-museo-slab meta">Posted on 30 Nov 2011</h3>
+  <h2 class="title">How to link to other posts in octopress</h2>
+  <h3 class="tk-museo-slab meta">Posted on 09 Jan 2012</h3>
 
-  <p>Some <a href="https://github.com/h5bp/movethewebforward/contributors">really awesome people</a> and I put together this awesome resource
-to help promote doing more for the web. It was an awesome experience,
-and would love it if you took a look.</p>
+  <p>Earlier this week, <a href="http://www.candlerblog.com/" target="_blank">Jonathan Protsky</a> tweeted at me, <a href="https://twitter.com/#!/poritsky/status/156436178650931200" target="_blank">asking how I link to external posts</a> in my custom Octopress theme. I figured Jonathan isn&#8217;t the only one wondering how to do this, and since it isn&#8217;t exactly obvious, I&#8217;m here to share how I went about implementing that functionality.</p>
 
-<p><a href="http://movethewebforward.org">http://movethewebforward.org</a></p>
+<h3>It&#8217;s all in the YAML</h3>
+
+<p>As you can see <a href="https://github.com/imathis/octopress/issues/119#issuecomment-1922504" target="_blank">here</a>, Octopress allows any variable(s) to be added to the YAML of your post. The way I went about doing it was by adding an <code>external-url</code> attribute.</p>
+
+<h4>For example, see the post below</h4>
+
+<script src="https://gist.github.com/1584630.js"> </script>
+
+
+<p>Now, you may have noticed that I also gave the post some content. That&#8217;s
+becuase with my custom theme, I have links to the previous/next posts
+after the current post. If one of those links happens to be a post that
+uses an <code>external-url</code>, I&#8217;d like to give them some context on my own
+site before sending them off to another one.</p>
+
+<p>As you can see, I&#8217;m simply adding an <code>external-url</code> attribute, and if I
+want to link to a post that is at a different URL, I just put the URL in
+there.</p>
+
+<h3>Okay, it&#8217;s not all in the YAML</h3>
+
+<p>Now, we just need to adjust the index page that loops through and lists
+all of your posts (most likely <code>source/index.html</code>).</p>
+
+<p>All you need to do is check to see if <code>post.external-url</code> exists. See
+the example below (that&#8217;s actually the <code>index.html</code> file I use):</p>
+
+<script src="https://gist.github.com/1584645.js"> </script>
+
+
+<p>And, as you can see, I&#8217;m prefixing all of my posts that link to an
+external URL with <code>[link]</code>, so the user knows what to expect. I&#8217;d
+recommend giving some kind of visual cue to the user.</p>
 
 
 </header>
@@ -54,13 +84,9 @@ and would love it if you took a look.</p>
 <p class="bottom-nav-links">
   
     <span id="prev-link" class="bottom-nav-link">
-    <a class="basic-alignment left" href="/b/2011/08/published-on-nettuts/" title="Previous Post: Published on nettuts!">&larr; Published on nettuts!</a>
+    <a class="basic-alignment left" href="/b/2012/01/play-all-rdio-songs-on-mobile-dot-dot-dot-kind-of/" title="Previous Post: Play all rdio songs on mobile... kind of.">&larr; Play all rdio songs on mobile... kind of.</a>
     </span>
   
-  
-    <span id="next-link" class="bottom-nav-link">
-      <a class="basic-alignment right" href="/b/2011/12/test-blog-post/" title="next Post: Test Blog Post">Test Blog Post &rarr;</a>
-    </span>
   
 </p>
 

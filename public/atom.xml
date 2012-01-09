@@ -4,7 +4,7 @@
   <title><![CDATA[Connor Montgomery]]></title>
   <link href="http://cnnr.me//atom.xml" rel="self"/>
   <link href="http://cnnr.me//"/>
-  <updated>2012-01-09T12:34:36-06:00</updated>
+  <updated>2012-01-09T14:07:09-06:00</updated>
   <id>http://cnnr.me//</id>
   <author>
     <name><![CDATA[Connor Montgomery]]></name>
@@ -12,6 +12,49 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to link to other posts in octopress]]></title>
+    <link href="http://cnnr.me//b/2012/01/how-to-link-to-other-posts-in-octopress/"/>
+    <updated>2012-01-09T13:49:00-06:00</updated>
+    <id>http://cnnr.me//b/2012/01/how-to-link-to-other-posts-in-octopress</id>
+    <content type="html"><![CDATA[<p>Earlier this week, <a href="http://www.candlerblog.com/" target="_blank">Jonathan Protsky</a> tweeted at me, <a href="https://twitter.com/#!/poritsky/status/156436178650931200" target="_blank">asking how I link to external posts</a> in my custom Octopress theme. I figured Jonathan isn&#8217;t the only one wondering how to do this, and since it isn&#8217;t exactly obvious, I&#8217;m here to share how I went about implementing that functionality.</p>
+
+<h3>It&#8217;s all in the YAML</h3>
+
+<p>As you can see <a href="https://github.com/imathis/octopress/issues/119#issuecomment-1922504" target="_blank">here</a>, Octopress allows any variable(s) to be added to the YAML of your post. The way I went about doing it was by adding an <code>external-url</code> attribute.</p>
+
+<h4>For example, see the post below</h4>
+
+<script src="https://gist.github.com/1584630.js"> </script>
+
+
+<p>Now, you may have noticed that I also gave the post some content. That&#8217;s
+becuase with my custom theme, I have links to the previous/next posts
+after the current post. If one of those links happens to be a post that
+uses an <code>external-url</code>, I&#8217;d like to give them some context on my own
+site before sending them off to another one.</p>
+
+<p>As you can see, I&#8217;m simply adding an <code>external-url</code> attribute, and if I
+want to link to a post that is at a different URL, I just put the URL in
+there.</p>
+
+<h3>Okay, it&#8217;s not all in the YAML</h3>
+
+<p>Now, we just need to adjust the index page that loops through and lists
+all of your posts (most likely <code>source/index.html</code>).</p>
+
+<p>All you need to do is check to see if <code>post.external-url</code> exists. See
+the example below (that&#8217;s actually the <code>index.html</code> file I use):</p>
+
+<script src="https://gist.github.com/1584645.js"> </script>
+
+
+<p>And, as you can see, I&#8217;m prefixing all of my posts that link to an
+external URL with <code>[link]</code>, so the user knows what to expect. I&#8217;d
+recommend giving some kind of visual cue to the user.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Play all rdio songs on mobile... kind of.]]></title>
@@ -183,6 +226,36 @@ out my <a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-i-made-the
 <code>*</code> is required, becuase it&#8217;s a wildcard character. Basically, that
 means the <code>keysocket-rdio.js</code> file will load at any path within
 <code>http://rdio.com</code>, not just the root path.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Test Blog Post]]></title>
+    <link href="http://cnnr.me//b/2011/12/test-blog-post/"/>
+    <updated>2011-12-28T23:47:00-06:00</updated>
+    <id>http://cnnr.me//b/2011/12/test-blog-post</id>
+    <content type="html"><![CDATA[<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, <a href="http://cnnr.me">nascetur ridiculus</a> mus. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+<h3>Breaking up some of my thoughts with a subhead</h3>
+
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+
+<blockquote><p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p></blockquote>
+
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+
+<figure>
+  <img src="../images/img.png">
+  <figcaption><strong>Above:</strong> This is an image of a bicicle.</figcaption>
+</figure>
+
+
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+
+<script src="https://gist.github.com/1218637.js?file=newSite.sh"></script>
+
+
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 ]]></content>
   </entry>
   
