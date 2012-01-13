@@ -185,14 +185,17 @@ html, body, .container{height: 100%;}
 
 
 body.mobile{
-  .container{width: 95%; margin:0 auto; padding-top: 20px; overflow:hidden;
-    &.blog{overflow-y: scroll;-webkit-text-size-adjust: none; padding-top: 0;
+  .container{width: 95%; margin:0 auto; padding-top: 20px;
+    &.blog{-webkit-text-size-adjust: none; padding-top: 0;
       #sm-logo{margin-top: 10px;}
       #main{margin-top: 40px; font-size: 14px;
         .title{font-size: 28px;}
         .meta{margin-bottom: 10px; font-size: 14px;}
-        .scrollGist{text-align:center; background:#efefef; font-size: 13px; font-weight: bold; margin-bottom: 3px;}
         p{line-height: 20px;}
+        .posts{
+          li{max-height: 25px; overflow:hidden; text-overflow: ellipsis; white-space:nowrap; max-width: 95%; height: 25px;
+          }
+        }
       }
     }
   }
