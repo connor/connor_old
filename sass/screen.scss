@@ -193,8 +193,7 @@ body.mobile{
         .meta{margin-bottom: 10px; font-size: 14px;}
         p{line-height: 20px;}
         .posts{
-          li{max-height: 25px; overflow:hidden; text-overflow: ellipsis; white-space:nowrap; max-width: 95%; height: 25px;
-          }
+          li{max-height: 26px; height: 26px; text-overflow: ellipsis; overflow:hidden; white-space: nowrap;}
         }
       }
     }
