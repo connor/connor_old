@@ -40,7 +40,12 @@
   <h2 class="title">Keyboard shortcuts on Rdio</h2>
   <h3 class="tk-museo-slab meta">Posted on 01 Jan 2012</h3>
 
-  <p>Call me crazy, but most of the time when I can use a web app over a
+  <p class="update">
+<strong>Update:</strong> with the launch of <a href="http://blog.rdio.com/us/2012/03/introducing-new-rdio.html">Rdio 2.0</a>, some of the markup has changed. I have updated the <a href="https://gist.github.com/2067842">link to the gist</a> in the post.
+</p>
+
+
+<p>Call me crazy, but most of the time when I can use a web app over a
 native app, I prefer the web app. Maybe some of you do, too.</p>
 
 <p>Anyways, one of my favorite web apps is <a href="http://rdio.com">Rdio</a>. I
@@ -86,7 +91,7 @@ in there (I will explain it later on in the post):</p></li>
 </ol>
 
 
-<script src="https://gist.github.com/1548707.js"> </script>
+<script src="https://gist.github.com/2067842.js"> </script>
 
 
 <p>Finally, open up the <code>manifest.json</code> file, and adjust it to be like
@@ -128,8 +133,7 @@ extension. I&#8217;d recommend checking that out (and following him on <a href="
 when you press a button down. If that button&#8217;s character code matches
 what we define in our <code>keysocket-rdio.js</code> file (in this case, 20 for the
 previous button, 16 for play/pause, and 19 for the next button), then it
-executes the <code>simulateClick</code> function, passing in the element ID that we
-defined.</p>
+executes the <code>simulateClick</code> function, passing in the <del>element ID</del> class that we defined.</p>
 
 <p>It then, well, simulates a click on that element.</p>
 
@@ -141,18 +145,18 @@ just copied &amp; pasted what Boris had done with other services, and modified i
 Rdio. However - it&#8217;s good to know how I ended up changing it.</p>
 
 <p>It was extremely simple - the block of code from <code>line 34 - line 42</code> is
-all that needed modification. I just changed the ID&#8217;s of Rdio&#8217;s elements
+all that needed modification. I just changed the <del>ID&#8217;s</del> classes of Rdio&#8217;s elements
 in the DOM to match what action was supposed to happen.</p>
 
 <figure>
-  <a href="http://f.cl.ly/items/3Q1k440z0I403M2Y1B1k/Screen%20Shot%202012-01-01%20at%206.21.14%20PM.png" target="_blank"><img src="http://f.cl.ly/items/3P0m350A2n1A213n0q08/rdio-small.png"></a>
+  <a href="http://f.cl.ly/items/3F092y1c2C1a0g3K2K0P/rdio_large.jpg" target="_blank"><img src="http://f.cl.ly/items/2r0a02151X2a042F190R/rdio_small.jpg"></a>
   <figcaption><strong>Above:</strong> The DOM tree that makes up Rdio&#8217;s player</figcaption>
 </figure>
 
 
 <p>For example, on line 34. If the key pressed&#8217;s keyCode is equal to the
 <code>PREV</code>&#8217;s value (which happens if you press F7 on the Apple keyboard), it
-runs the <code>simulateClick</code> function and passes in the <code>previousButton</code> ID.</p>
+runs the <code>simulateClick</code> function and passes in the <del><code>previousButton</code> ID</del> <code>prev</code> class.</p>
 
 <p>That&#8217;s really it, just copied 3 times. If you have any questions about
 it, feel free to let me know on twitter.</p>

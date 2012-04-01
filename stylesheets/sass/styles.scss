@@ -9,7 +9,7 @@ html, body, .container{height: 100%;}
       .super{font-size: 15px; position: relative; top: -6px;}
     }
 
-  #main{font-size: 16px; color:#919191; line-height: 23px;;
+  #main{font-size: 16px; color:#919191; line-height: 23px;
     p{line-height: 23px;
       .strike{text-decoration: line-through;}
     }
@@ -32,6 +32,7 @@ html, body, .container{height: 100%;}
   #high-fives{color: #919191; font-size: 12px; font-weight: 300; position: absolute; bottom: 20px; right: 0;}
 
   &.blog{width: 600px;
+    .update {background: #FEF8C4; border: 1px solid #D8D566; padding: 2px 5px;}
     #sm-logo{margin-top: 45px; font-size: 14px; font-weight: normal; color:#999999;
       a{text-decoration:none; color:#000000; font-weight: 600;
         &:hover{text-decoration: underline;}

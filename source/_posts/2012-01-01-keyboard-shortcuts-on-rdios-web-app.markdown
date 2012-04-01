@@ -7,6 +7,10 @@ external-url:
 published: true
 ---
 
+<p class="update">
+<strong>Update:</strong> with the launch of <a href="http://blog.rdio.com/us/2012/03/introducing-new-rdio.html">Rdio 2.0</a>, some of the markup has changed. I have updated the <a href="https://gist.github.com/2067842">link to the gist</a> in the post.
+</p>
+
 Call me crazy, but most of the time when I can use a web app over a
 native app, I prefer the web app. Maybe some of you do, too.
 
@@ -51,7 +55,7 @@ within the project directory.
 3. Now, open up the `keysocket-rdio.js` file you just created, and put the following code
    in there (I will explain it later on in the post):
 
-<script src="https://gist.github.com/1548707.js"> </script>
+<script src="https://gist.github.com/2067842.js"> </script>
 
 Finally, open up the `manifest.json` file, and adjust it to be like
 so (I will also explain this later on in the post):
@@ -91,8 +95,7 @@ Essentially, the keysocket app installed locally messages the extension
 when you press a button down. If that button's character code matches
 what we define in our `keysocket-rdio.js` file (in this case, 20 for the
 previous button, 16 for play/pause, and 19 for the next button), then it
-executes the `simulateClick` function, passing in the element ID that we
-defined.
+executes the `simulateClick` function, passing in the <del>element ID</del> class that we defined.
 
 It then, well, simulates a click on that element.
 
@@ -104,18 +107,18 @@ just copied & pasted what Boris had done with other services, and modified it to
 Rdio. However - it's good to know how I ended up changing it.
 
 It was extremely simple - the block of code from `line 34 - line 42` is
-all that needed modification. I just changed the ID's of Rdio's elements
+all that needed modification. I just changed the <del>ID's</del> classes of Rdio's elements
 in the DOM to match what action was supposed to happen.
 
 <figure>
-  <a href="http://f.cl.ly/items/3Q1k440z0I403M2Y1B1k/Screen%20Shot%202012-01-01%20at%206.21.14%20PM.png" target="_blank"><img src="http://f.cl.ly/items/3P0m350A2n1A213n0q08/rdio-small.png"></a>
+  <a href="http://f.cl.ly/items/3F092y1c2C1a0g3K2K0P/rdio_large.jpg" target="_blank"><img src="http://f.cl.ly/items/2r0a02151X2a042F190R/rdio_small.jpg"></a>
   <figcaption><strong>Above:</strong> The DOM tree that makes up Rdio's player</figcaption>
 </figure>
 
 
 For example, on line 34. If the key pressed's keyCode is equal to the
 `PREV`'s value (which happens if you press F7 on the Apple keyboard), it
-runs the `simulateClick` function and passes in the `previousButton` ID.
+runs the `simulateClick` function and passes in the <del>`previousButton` ID</del> `prev` class.
 
 That's really it, just copied 3 times. If you have any questions about
 it, feel free to let me know on twitter.
