@@ -4,7 +4,7 @@
   <title><![CDATA[Connor Montgomery]]></title>
   <link href="http://cnnr.me//atom.xml" rel="self"/>
   <link href="http://cnnr.me//"/>
-  <updated>2012-04-01T16:55:13-05:00</updated>
+  <updated>2012-04-29T18:39:38-05:00</updated>
   <id>http://cnnr.me//</id>
   <author>
     <name><![CDATA[Connor Montgomery]]></name>
@@ -12,6 +12,112 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Move More Than 1 Unit with Square's Cubism.js]]></title>
+    <link href="http://cnnr.me//b/2012/04/my-modification-to-squares-cubism-dot-js/"/>
+    <updated>2012-04-26T21:42:00-05:00</updated>
+    <id>http://cnnr.me//b/2012/04/my-modification-to-squares-cubism-dot-js</id>
+    <content type="html"><![CDATA[<p>A few days ago, <a href="http://squareup.com">Square</a> released another open-source project: <a href="http://square.github.com/cubism/">cubism.js</a>. Cubism is a plugin for the fantastic <a href="http://mbostock.github.com/d3/">D3</a> library, allowing you to visualize data over a series of time.</p>
+
+<p>When cubism was released, I began using it and hacking on some examples. I found one feature I really wanted was missing: the ability to move multiple units at once across the graph via the keyboard. You can move 1 unit at a time by pressing &larr; or &rarr;, but I wanted to be able to quickly move from one side of the graph to another, without having to use the mouse.</p>
+
+<p>Before digging into this, it&#8217;s worth noting that the guy behind D3 and Cubism, <a href="http://bost.ocks.org/mike/">Mike Bostock</a>, and I have already <a href="https://github.com/square/cubism/pull/2">discussed getting this into cubism&#8217;s core</a>, but decided against it to keep the code base small and not force developers into doing something a specific way.</p>
+
+<h2>Adding this functionality</h2>
+
+<p>The first thing you&#8217;ll need to do is to clone the repo. To do so, simply run the following in the terminal:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/square/cubism.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now that we have the code, let&#8217;s move into that folder we just made by doing a <code>cd cubism</code> in the terminal.</p>
+
+<p>Before diving into this, though, we&#8217;ll need something to test our changes against. The easiest way to do this is to use the <code>gh-pages</code> branch of the cubism repo. This way, we can test our code with the example demo app Mike and Square have put together for us. To check this branch out, simply do the following in the terminal:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout gh-pages</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Great - now we have a demo app to see our progress with (to see the demo app, open <code>demo/index.html</code> in your favorite web browser). If you look at the source of <code>demo/index.html</code>, you&#8217;ll see it&#8217;s referencing <code>cubism.v1.js</code> in the parent directory. So, that&#8217;s what we&#8217;ll be modifying.</p>
+
+<h4>Modifying cubism.v1.js</h4>
+
+<p>Now, open up <code>cubism.v1.js</code> in your text editor. Since we&#8217;re looking to add this functionality when a user presses a key, I just searched for a <code>keydown</code> event. It turns it you can find it on approximately <strong>line 130</strong>, with this code: <code>d3.select(window).on("keydown.context-" + ++cubism_id, function() {...</code>.</p>
+
+<p>I won&#8217;t get too much into the code that surrounds the <code>switch</code> statement, but <code>.select()</code> and is part of <a href="http://mbostock.github.com/d3/">D3</a>, and we&#8217;re just waiting for a <code>keydown</code> event.</p>
+
+<p>Let&#8217;s get this working for the <code>left</code> key first, so we&#8217;ll adjust what is within the <code>case 37</code>. Right now, it is like this:</p>
+
+<script src="https://gist.github.com/2553756.js"> </script>
+
+
+<p>Basically, that&#8217;s saying if the user isn&#8217;t focusing on anything yet, bring the focus to the right-most unit on the graph (which is <code>size - 1</code>). If the focus is something that is greater than zero, then set the <code>context.focus</code> to be 1 less than the current focus - pretty simple stuff.</p>
+
+<p>The way I wanted cubism to work was, if I was holding down <code>shift</code> while using the arrow keys, the focus would move more than 1 unit (perhaps 20 units). To do that programmatically, we get something like this:</p>
+
+<script src="https://gist.github.com/2553760.js"> </script>
+
+
+<p>So this code tells cubism to move the focus by 20 if the following 2 are true statements:</p>
+
+<ol>
+<li>the <code>shift</code> key is pressed while the user is pressing &larr;</li>
+<li>the focus is greater than <code>20</code></li>
+</ol>
+
+
+<p>The second condition above is needed, because otherwise, the focus could move off the graph, and we definitely don&#8217;t want that! However, if the focus is less than 20, the execution flow will then cascade into the <code>else</code> clause, and the focus will subtract itself by 1, like it would if <code>shift</code> wasn&#8217;t pressed by the user.</p>
+
+<p>Now, let&#8217;s do something similar if they were to press the right arrow:</p>
+
+<script src="https://gist.github.com/2553762.js"> </script>
+
+
+<p>The code above is essentially the inverse of what we do for &larr;.</p>
+
+<p>Now that we&#8217;ve made the adjustment to our cubism code, we can open up <code>demo/index.html</code> in our browser and test it out! It should work great - we can jump 20 units left or right when we&#8217;re not close to an edge, and when we are close to an edge, it will fall back and just jump by 1 unit.</p>
+
+<h4>Adding this to the API</h4>
+
+<p>If you want to take this a step further, though, we can add this to the API of cubism, so you can dynamically change the shift difference value.</p>
+
+<p>The first thing we&#8217;ll need to do is set a default value as a variable. I&#8217;m calling mine <code>shiftDiff</code>, and putting it on line 25 of <code>cubism.v1.js</code>, directly underneat the <code>clientDelay</code> variable.</p>
+
+<script src="https://gist.github.com/2553771.js"> </script>
+
+
+<p>Now, we need to add a method to the <code>context</code> object. You can see directly under the <strong>update</strong> function declaration in <code>cubism.v1.js</code>, Mike starts to declare methods on the <code>context</code> object (like <em>start</em>, <em>stop</em>, <em>step</em>, etc&#8230;). We&#8217;re going to put ours directly underneath <code>stop</code>. So, on approximately line 68, let&#8217;s add the following:</p>
+
+<script src="https://gist.github.com/2553772.js"> </script>
+
+
+<p>This <code>shiftDiff</code> function allows us to pass in a <code>diff</code> argument, and will set the units to move when the user is holding <code>shift</code> and pressing the arrow keys. We can use it like so:</p>
+
+<script src="https://gist.github.com/2553774.js"> </script>
+
+
+<p>This won&#8217;t quite work yet, though - we need to update our previous adjustments to the switch statement on <code>keydown</code> to use the <code>shiftDiff</code> variable, not just <code>20</code>.</p>
+
+<p>So, they become:</p>
+
+<script src="https://gist.github.com/2553777.js"> </script>
+
+
+<p>Awesome. Now, let&#8217;s open up <code>demo/index.html</code> in our text editor and change the <code>shiftDiff</code> to a larger number. You&#8217;ll see on approximately line 14 of <code>demo/index.html</code>, there is a new cubism context created:</p>
+
+<script src="https://gist.github.com/2553781.js"> </script>
+
+
+<p>Let&#8217;s adjust that to take into account our new API adjustment:</p>
+
+<script src="https://gist.github.com/2553782.js"> </script>
+
+
+<p>Now, when we load up the <code>demo/index.html</code> page in our browser, the <code>shiftDiff</code> is going to be move a heck of a lot more than 20 units!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[HTML5...plz?]]></title>
