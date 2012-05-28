@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Your first node.js module - Connor Montgomery</title>
+
+  <meta name="description" content="Connor Montgomery is a Developer, CS Student, and Frat Boy.">
+  <meta name="author" content="Connor Montgomery">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+
+  <script type="text/javascript" src="http://use.typekit.com/nuw6vzl.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <!-- HTML5 shim -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/stylesheets/screen.css">
+
+</head>
+
+<body class="tk-proxima-nova">
+
+  <div class="container blog hidden">
+    <header id="header">
+      <h1 id="sm-logo">Hey there, I'm <a href="/">Connor</a>.
+        This is my <a href="/b">blog</a>.</h1>
+    </header>
+
+    <article id="main">
+      <header>
+
+  <h2 class="title">Your first node.js module</h2>
+  <h3 class="tk-museo-slab meta">Posted on 27 May 2012</h3>
+
+  <p>Making modular and reusable code is something we should all be doing to keep the
+quality of it up to par. A very simple way to make reusable <em>modules</em> of code in
+<a href="http://nodejs.org/">node.js</a> is to create generalized modules (no pun
+intended).</p>
+
+<p>Recently, I created a <a href="http://search.npmjs.org/#/Domai.nr">node module</a> for
+<a href="http://domai.nr">Domai.nr</a>, and wanted to shed some light on how easy it
+actually is to make these node modules. In this post, we&#8217;re going to recreate
+the domai.nr module from scratch, and hopefully you learn a few things along the
+way!</p>
+
+<h3>What is a Node Module?</h3>
+
+<p>A <a href="https://github.com/joyent/node/wiki/modules">node module</a> is JavaScript code
+that usually does a few specific things, and is usually agnostic to the rest of
+your application. It typically promotes better code quality, and is super
+awesome because you can publish your modules to <a href="http://npmjs.org/">npm</a> so
+others can use them, too. If you&#8217;re not familiar with npm, check out <a href="http://howtonode.org/introduction-to-npm">this
+article</a> for a simple introduction.</p>
+
+<p>Some of the <a href="http://search.npmjs.org/">most popular</a> node modules are:</p>
+
+<ul>
+<li><a href="http://search.npmjs.org/#/underscore">underscore.js</a></li>
+<li><a href="http://search.npmjs.org/#/coffee-script">coffee script</a></li>
+<li><a href="http://search.npmjs.org/#/express">express</a></li>
+<li><a href="http://search.npmjs.org/#/jade">jade</a></li>
+<li><a href="http://search.npmjs.org/#/socket.io">socket.io</a></li>
+</ul>
+
+
+<h3>Why a Domai.nr node module?</h3>
+
+<p>I&#8217;ve chosen the Domai.nr API over others for several reasons. Mostly, becuause
+it has two methods that both return JSON: <a href="http://domai.nr/api/docs/json#search-api">search</a> and <a href="http://domai.nr/api/docs/json#info-api">info</a>. It&#8217;s very easy to write a wrapper for these two methods. Also, I &lt;3 Domai.nr a ton, and you should too. :D</p>
+
+<h3>Let&#8217;s get started!</h3>
+
+<p>As Isaac mentions <a href="http://howtonode.org/how-to-module">here</a>, there are
+different ways for you to write a module. Some people have specific preferences,
+and if you have any insight or feedback as to my process, I&#8217;d love to <a href="mailto:c@cnnr.me&amp;subject=How+I+Write+Node+Modules">hear from
+you</a>.</p>
+
+<h3>A package.json file</h3>
+
+<p>The package.json file is a description of the module, and also specifies where
+your code is located. Some common attributes in the file include:</p>
+
+<ul>
+<li>Name of the module</li>
+<li>Version</li>
+<li>Description of the module</li>
+<li>Dependencies of the module</li>
+<li>Git repo</li>
+<li>Keywords (for searching npm)</li>
+<li>Main (where the code is located, relative to the package.json file)</li>
+</ul>
+
+
+<p>As you can tell, there is actually quite a bit of important information in here.
+This particular package.json file won&#8217;t be too large.</p>
+
+<script src="https://gist.github.com/2817308.js"> </script>
+
+
+<p>That should be fairly self-explanatory, but one thing to note is the <strong>main</strong>
+attribute of this JSON object. I touched on it briefly a bit earlier on in the
+post, but essentially, it&#8217;s a path to the code that makes up your module.</p>
+
+<h3>Getting ready</h3>
+
+<p>Awesome - now we just have one more quick step before digging into the code.
+Remember earlier when I mentioned we can publish our packages to npm and let
+others use them? This is one of my favorite things about creating node modules -
+we can use great code that has already been written for us. In our
+<code>package.json</code> file, we actually specified a dependency: a great HTTP abstraction called <a href="https://github.com/mikeal/request">request</a>.</p>
+
+<h3>Coding it up</h3>
+
+<p>As you saw in the package.json file above, we have a file at <code>/lib/domainr</code>
+where our code is kept. It&#8217;s actually at <code>/lib/domainr.js</code> (we omit the <code>.js</code> at
+the end). Let&#8217;s make the folder that goes with it, and the file:</p>
+
+<pre><code>mkdir lib &amp;&amp; touch lib/domainr.js
+</code></pre>
+
+<p>Alright - now pop open your favorite text editor, and let&#8217;s get this coded.</p>
+
+<p>If you&#8217;re familiar with Node.js, this should be pretty trivial (it is very easy
+to make these, after all). I&#8217;ll try and walk us through it, so anyone reading
+should hopefully understand. If you have any questions, feel free to reach out
+on <a href="http://twitter.com/connor">twitter</a> or <a href="mailto:c@cnnr.me">email</a>.</p>
+
+<p>The first thing we need to do in our <code>domainr.js</code> file is to require <a href="https://github.com/mikeal/request">request</a>. To do so, add the following at the top of the file:</p>
+
+<pre><code>var request = require('request')
+</code></pre>
+
+<br>This allows us to utilize all of the goodness that comes with request. That&#8217;s
+
+
+<p>perfect, since we&#8217;re just making HTTP requests to the domai.nr API.</p>
+
+<h4>An aside: how we want people to use the module</h4>
+
+<p>At this point, I&#8217;ve usually plotted out how I want my public API to be (i.e.
+what methods the users would be able to call using my module). I figured it
+would be best to just mirror domai.nr&#8217;s methods, so we&#8217;ll have two: <code>search</code> and
+<code>info</code>.</p>
+
+<p>So, it&#8217;s basically like this (<strong>NOTE</strong> do not add this as code, this is just an
+example for <em>how</em> it will be used):</p>
+
+<script src="https://gist.github.com/2817441.js"> </script>
+
+
+<p>You can find examples of what the responses will be like on <a href="http://domai.nr/api/docs/json">Domai.nr&#8217;s
+documentation</a>.</p>
+
+<h4>Back to coding&#8230;</h4>
+
+<p>That was a good exercise because now, we know exactly what we want to expose:
+<code>.search</code> and <code>.info</code>. Let&#8217;s to search first.</p>
+
+<p>To expose a method on the module object that is returned when <code>require</code>&#8216;ing it,
+you use <code>exports</code>. For example - we want people to call <code>.search</code> on the variable they aliased to the <code>require</code> (in the example above). In order to expose the method, we prefix it with <code>exports</code>. Here&#8217;s <a href="http://stackoverflow.com/questions/5311334/what-is-the-purpose-of-nodejs-module-exports-and-how-do-you-use-it#answer-5311377">more about that</a>, if you&#8217;re still a bit stuck.</p>
+
+<p>Let&#8217;s implement the search method now. Since we know about the <code>exports</code>, the
+signature of the function will look like this (with the <code>require</code> above it, just
+to make sure you&#8217;re following along:</p>
+
+<script src="https://gist.github.com/2817458.js"> </script>
+
+
+<p>As you see, we&#8217;re passing two arguments: a query to use for the search, and a
+callback function to use when the Domai.nr API has responded.</p>
+
+<p>This next part will utilize request. I recommend taking a look at <a href="https://github.com/mikeal/request#super-simple-to-use">this
+example</a> to be a little
+bit more familiar with how it works.</p>
+
+<p>Essentially, we make an HTTP request to a URL, and request gives us an <code>error</code>
+object, a <code>response</code> object, and a <code>body</code> object in response. We can then
+utilize those in our callback function.</p>
+
+<p>Let&#8217;s go ahead and implement that in our search function (add lines 5 - 7):</p>
+
+<script src="https://gist.github.com/2817490.js"> </script>
+
+
+<p>This is pretty simple - we make a request to the search endpoint of Domai.nr&#8217;s
+API, with the query parameter of what we&#8217;re searching. We then execute the
+callback function with the JSON that Domai.nr returns.</p>
+
+<p>This is looking pretty good, but let&#8217;s fix one thing up. You see where we&#8217;re
+appending <code>query</code> to the URL? Go ahead and wrap <code>query</code> in <code>encodeURI</code>, so we
+get something like:</p>
+
+<script src="https://gist.github.com/2817498.js"> </script>
+
+
+<p>This allows users to pass in phrases separated by spaces (i.e. &#8220;Connor Montgomery&#8221;), and have it query the API with both of them in mind (like the actual Domai.nr site does).</p>
+
+<p>So, right now you get a <a href="http://www.ihighfive.com/">high five</a>, becuase our
+<code>search</code> method is complete! In fact, you can even open up a terminal and check
+it out (in node&#8217;s <a href="http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd TO/YOUR/DOMAINR/PROJECT/DIRECTORY
+</span><span class='line'>$ node
+</span><span class='line'>&gt; var domainr = require("./lib/domainr");
+</span><span class='line'>&gt; domainr.search("san francisco", function(resp) { console.log(resp) })</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And after a few moments, you should see a JSON object from Domai.nr returned in
+your terminal. Awesomesauce!</p>
+
+<h4>The .info method</h4>
+
+<p>The info method is essentially the same thing, we just make it an <code>exports.info</code>
+(instead of <code>exports.search</code>, and change the URL in the <code>request</code> argument to
+<code>http://domai.nr/api/json/info?q=</code>. We don&#8217;t need to wrap the <code>query</code> in
+<em>encodeURI</em>, since developers will be passing in a domain name, and not a
+possibly-space-separated string.</p>
+
+<p>However, we ought to throw an error if they do happen to not pass in a domain.
+It&#8217;s actually very trivial to do so, since we can just see what the
+<code>statusCode</code> in the <code>response</code> object from request is. If it&#8217;s a 200 (i.e. an
+&#8220;OK&#8221;), all&#8217;s well. If it&#8217;s not, then we&#8217;ll throw an error. See the code below:</p>
+
+<script src="https://gist.github.com/2817530.js"> </script>
+
+
+<p>And that&#8217;s it, actually. Congrats!</p>
+
+<p>If you were to push this to npm now, you&#8217;d simply need to create a user (<code>npm
+adduser</code>). Next, you&#8217;d <code>cd</code> to the root of your project (where your
+<code>package.json</code> file is), and simply type <code>npm publish</code>. And then it&#8217;s live!</p>
+
+
+</header>
+
+
+
+<p class="bottom-nav-links">
+  
+    <span id="prev-link" class="bottom-nav-link">
+    <a class="basic-alignment left" href="/b/2012/04/my-modification-to-squares-cubism-dot-js/" title="Previous Post: Move More Than 1 Unit with Square's Cubism.js">&larr; Move More Than 1 Unit with Square's Cubism.js</a>
+    </span>
+  
+  
+</p>
+
+
+
+      <footer role="contentinfo"><footer class="post-footer">
+  Hey there, I'm Connor. You can find me on <a href="http://github.com/connormontgomery"
+      target="_blank">github</a>, <a href="http://twitter.com/connor"
+      target="_blank">twitter</a>, <a href="http://rdio.com/people/cnnr"
+      target="_blank">rdio</a>, <a
+      href="http://www.linkedin.com/profile/view?id=69032722&trk=tab_pro"
+      target="_blank">linkedin</a>, <a
+      href="http://facebook.com/connor.montgomery1"
+      target="_blank">facebook</a>, and <a href="mailto:c[at]cnnr[dot]me">gmail</a>. I helped prototype <a href="http://lift.do"
+      target="_blank">Lift</a> and I'm excited to work for <a
+      href="http://apple.com" target="_blank">Apple</a> this summer in Cupertino. I'm a junior studying Computer Science at <a href="http://mathcs.slu.edu">SLU</a>.
+      This site is proudly powered by <a href="http://octopress.org" target="_blank">octopress</a>.
+    <!-- TODO: change the about me link to about.me -->
+</footer>
+</footer>
+    </article>
+  </div>
+
+  <script type="text/javascript">
+    var _gauges = _gauges || [];
+    (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '4f1fb2fbcb25bc4025000001');
+      t.src = '//secure.gaug.es/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+</body>
+
+  <script defer src="/javascripts/ender.min.js"></script>
+  <script defer src="/javascripts/script.js"></script>
+
+</html>
