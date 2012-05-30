@@ -64,6 +64,11 @@ your code is located. Some common attributes in the file include:
 As you can tell, there is actually quite a bit of important information in here.
 This particular package.json file won't be too large.
 
+If you already have npm installed, you can simply run an `npm init` to
+guide you through making a barebones `package.json` file. Otherwise, you
+can create it manually. Regardless of how you do create it, make sure it
+is like this:
+
 <script src="https://gist.github.com/2817308.js"> </script>
 
 That should be fairly self-explanatory, but one thing to note is the **main**
@@ -84,7 +89,9 @@ As you saw in the package.json file above, we have a file at `/lib/domainr`
 where our code is kept. It's actually at `/lib/domainr.js` (we omit the `.js` at
 the end). Let's make the folder that goes with it, and the file:
 
-    mkdir lib && touch lib/domainr.js
+```
+mkdir lib && touch lib/domainr.js
+```
 
 Alright - now pop open your favorite text editor, and let's get this coded.
 
@@ -95,9 +102,11 @@ on [twitter](http://twitter.com/connor) or [email](mailto:c@cnnr.me).
 
 The first thing we need to do in our `domainr.js` file is to require [request](https://github.com/mikeal/request). To do so, add the following at the top of the file:
 
-    var request = require('request')
+```
+var request = require('request')
+```
 
-<br>This allows us to utilize all of the goodness that comes with request. That's
+This allows us to utilize all of the goodness that comes with request. That's
 perfect, since we're just making HTTP requests to the domai.nr API.
 
 #### An aside: how we want people to use the module
@@ -150,7 +159,7 @@ API, with the query parameter of what we're searching. We then execute the
 callback function with the JSON that Domai.nr returns.
 
 This is looking pretty good, but let's fix one thing up. You see where we're
-appending `query` to the URL? Go ahead and wrap `query` in `encodeURI`, so we
+appending `query` to the URL? Go ahead and wrap `query` in `encodeURIComponent`, so we
 get something like:
 
 <script src="https://gist.github.com/2817498.js"> </script>
@@ -176,7 +185,7 @@ your terminal. Awesomesauce!
 The info method is essentially the same thing, we just make it an `exports.info`
 (instead of `exports.search`, and change the URL in the `request` argument to
 `http://domai.nr/api/json/info?q=`. We don't need to wrap the `query` in
-*encodeURI*, since developers will be passing in a domain name, and not a
+*encodeURIComponent*, since developers will be passing in a domain name, and not a
 possibly-space-separated string.
 
 However, we ought to throw an error if they do happen to not pass in a domain.

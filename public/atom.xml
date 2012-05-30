@@ -4,7 +4,7 @@
   <title><![CDATA[Connor Montgomery]]></title>
   <link href="http://cnnr.me//atom.xml" rel="self"/>
   <link href="http://cnnr.me//"/>
-  <updated>2012-05-28T00:33:29-07:00</updated>
+  <updated>2012-05-29T23:18:57-07:00</updated>
   <id>http://cnnr.me//</id>
   <author>
     <name><![CDATA[Connor Montgomery]]></name>
@@ -80,6 +80,11 @@ your code is located. Some common attributes in the file include:</p>
 <p>As you can tell, there is actually quite a bit of important information in here.
 This particular package.json file won&#8217;t be too large.</p>
 
+<p>If you already have npm installed, you can simply run an <code>npm init</code> to
+guide you through making a barebones <code>package.json</code> file. Otherwise, you
+can create it manually. Regardless of how you do create it, make sure it
+is like this:</p>
+
 <script src="https://gist.github.com/2817308.js"> </script>
 
 
@@ -101,8 +106,9 @@ we can use great code that has already been written for us. In our
 where our code is kept. It&#8217;s actually at <code>/lib/domainr.js</code> (we omit the <code>.js</code> at
 the end). Let&#8217;s make the folder that goes with it, and the file:</p>
 
-<pre><code>mkdir lib &amp;&amp; touch lib/domainr.js
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir lib && touch lib/domainr.js</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Alright - now pop open your favorite text editor, and let&#8217;s get this coded.</p>
 
@@ -113,13 +119,12 @@ on <a href="http://twitter.com/connor">twitter</a> or <a href="mailto:c@cnnr.me"
 
 <p>The first thing we need to do in our <code>domainr.js</code> file is to require <a href="https://github.com/mikeal/request">request</a>. To do so, add the following at the top of the file:</p>
 
-<pre><code>var request = require('request')
-</code></pre>
-
-<br>This allows us to utilize all of the goodness that comes with request. That&#8217;s
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var request = require('request')</span></code></pre></td></tr></table></div></figure>
 
 
-<p>perfect, since we&#8217;re just making HTTP requests to the domai.nr API.</p>
+<p>This allows us to utilize all of the goodness that comes with request. That&#8217;s
+perfect, since we&#8217;re just making HTTP requests to the domai.nr API.</p>
 
 <h4>An aside: how we want people to use the module</h4>
 
@@ -173,7 +178,7 @@ API, with the query parameter of what we&#8217;re searching. We then execute the
 callback function with the JSON that Domai.nr returns.</p>
 
 <p>This is looking pretty good, but let&#8217;s fix one thing up. You see where we&#8217;re
-appending <code>query</code> to the URL? Go ahead and wrap <code>query</code> in <code>encodeURI</code>, so we
+appending <code>query</code> to the URL? Go ahead and wrap <code>query</code> in <code>encodeURIComponent</code>, so we
 get something like:</p>
 
 <script src="https://gist.github.com/2817498.js"> </script>
@@ -203,7 +208,7 @@ your terminal. Awesomesauce!</p>
 <p>The info method is essentially the same thing, we just make it an <code>exports.info</code>
 (instead of <code>exports.search</code>, and change the URL in the <code>request</code> argument to
 <code>http://domai.nr/api/json/info?q=</code>. We don&#8217;t need to wrap the <code>query</code> in
-<em>encodeURI</em>, since developers will be passing in a domain name, and not a
+<em>encodeURIComponent</em>, since developers will be passing in a domain name, and not a
 possibly-space-separated string.</p>
 
 <p>However, we ought to throw an error if they do happen to not pass in a domain.
