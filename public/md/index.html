@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>a simple markdown editor</title>
+
+    <meta name="description" content="a simple markdown editor, by @connor">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/md/stylesheets/css/built.min.css">
+
+</head>
+<body>
+
+  <form id="wrapper" class="hidden">
+    <textarea id="code">
+# I'm a simple (markdown) editor.
+
+I save automatically and you can use me in full-screen mode.
+
+Those are my only features &mdash; on purpose.
+</textarea>
+  </form>
+
+  <div id="opts">
+    <!-- <a href='#' id='font-size'><span class="small">A</span>A</a> -->
+    <a href="#" id="full-screen">&harr;</a>
+  </div>
+
+  <script src="/md/js/ender.min.js"></script>
+  <script src="/md/js/codemirror.js"></script>
+  <script src="/md/js/script.js"></script>
+  <script>
+    var _gauges = _gauges || [];
+    (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '4f1fb2fbcb25bc4025000001');
+      t.src = '//secure.gaug.es/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+</body>
+</html>
+

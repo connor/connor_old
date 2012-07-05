@@ -1,0 +1,28 @@
+@import "lib/normalize";
+@import "lib/codemirror";
+@font-face {
+    font-family: 'ElenaWebBasic-Regular';
+    src: url('../../type/elenaregular.eot?#iefix') format('embedded-opentype'),
+         url('../../type/elenaregular.woff') format('woff'),
+         url('../../type/elenaregular.ttf') format('truetype'),
+         url('../../type/elenaregular.svg#elenaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html { background: #e8e6e6; height: 100%; }
+body { color: #222222; height: 100%; font-size: 1.2em; font-family: "ElenaWebBasic-Regular", "Elena Web Basic", "Elena", serif; }
+
+.hidden { visibility: hidden; }
+#wrapper { height: 100%; margin: 0 auto; }
+.CodeMirror { height: 100%; width: 100%;
+  .CodeMirror-scroll { height: 100%; width: 35em; margin: 0 auto; }
+}
+
+#opts { position: fixed; right: 1em; bottom: 1em;
+  .small { font-size: .8em; }
+  a { text-decoration: none; color: #cccccc;
+    -webkit-transition: .15s 0s all;
+    &:hover { color: #222222; }
+  }
+}
