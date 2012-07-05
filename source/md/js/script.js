@@ -2,6 +2,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     mode: "gfm"
   , matchBrackets: false
   , lineWrapping: true
+  , keyMap: "default"
   , autofocus: true
   , saveFunction: function() {
       localStorage['content'] = editor.getValue()
