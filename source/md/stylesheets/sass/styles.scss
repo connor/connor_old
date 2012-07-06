@@ -17,6 +17,7 @@ body { color: #222222; height: 100%; font-size: 1.2em; font-family: "ElenaWebBas
 #wrapper { height: 100%; margin: 0 auto; }
 .CodeMirror { height: 100%; width: 100%;
   .CodeMirror-scroll { height: 100%; width: 35em; margin: 0 auto; }
+  .CodeMirror-lines  { line-height: 1.5em; }
 }
 
 #opts { position: fixed; right: 1em; bottom: 1em;
