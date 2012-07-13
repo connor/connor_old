@@ -1,5 +1,6 @@
 @import "lib/normalize";
 @import "lib/codemirror";
+
 @font-face {
     font-family: 'ElenaWebBasic-Regular';
     src: url('../../type/elenaregular.eot?#iefix') format('embedded-opentype'),
@@ -11,7 +12,13 @@
 }
 
 html { background: #e8e6e6; height: 100%; }
-body { color: #222222; height: 100%; font-size: 1.2em; font-family: "ElenaWebBasic-Regular", "Elena Web Basic", "Elena", serif; }
+
+body {
+  color: #222222;
+  height: 100%;
+  font-size: 1.2em;
+  font-family: "ElenaWebBasic-Regular", "Elena Web Basic", "Elena", serif;
+}
 
 .hidden { visibility: hidden; }
 #wrapper { height: 100%; margin: 0 auto; }
