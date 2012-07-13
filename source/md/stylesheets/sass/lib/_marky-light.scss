@@ -1,0 +1,43 @@
+/* Marky-light theme for marky.io
+   theme by Connor Montgomery <@connor> */
+
+$bg:         #E8E1E3;
+$purple:     #8D33AA;
+$blue:       #236c9a;
+$green:      #10820d;
+$red:        #e0455f;
+$grey:       #80807e;
+$dark-grey:  #222222;
+$light-grey: #aeaead;
+
+.cm-s-marky-light {
+  font-family: "Elena Web Basic", "Elena", "Fjord", monospace;
+  background: url("/images/noise.png") repeat $bg;
+  text-rendering: optimizelegibility;
+  color: $dark-grey;
+  line-height: 1.3em;
+  font-size: 20px;
+}
+
+.cm-s-marky-light div.CodeMirror-selected {
+  background: #aeaead !important;
+}
+
+.cm-s-marky-light .cm-keymap-fat-cursor {
+  // TODO
+}
+
+.CodeMirror .cm-s-marky-light .CodeMirror-matchingbracket {
+  color: $red;
+}
+
+.cm-s-marky-light .CodeMirror-cursor {
+  // TODO
+  border-left:  1px solid #afada6 !important;
+  background:   rgba(171, 172, 172, 0.5) !important;
+}
+
+.cm-s-marky-light span.cm-header  { color: $purple; font-weight: normal !important; }
+.cm-s-marky-light span.cm-string  { color: $green;  }
+.cm-s-marky-light span.cm-link    { color: $blue;   }
+.cm-s-marky-light span.cm-quote   { color: $grey;   }

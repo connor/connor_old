@@ -106,6 +106,10 @@ html, body, .container{height: 100%;}
 
 .hidden{display:none;}
 
+a{text-decoration: none; color: #2576e5; cursor: pointer;
+  &:hover{text-decoration: underline;}
+}
+
 .container{width: 782px; margin: 0 auto; font-weight: 300; position: relative;
   &.hidden{display:none;}
     #logo{font-size: 39px; color:#000000; text-align: center;}
@@ -129,9 +133,6 @@ html, body, .container{height: 100%;}
     #linkedin{margin-left: 294px;}
     #qrcardus{margin-left: 320px;}
     #gmail{margin-left: 300px;}
-    a{text-decoration: none; color: #2576e5; cursor: pointer;
-      &:hover{text-decoration: underline;}
-    }
   }
 
   #high-fives{color: #919191; font-size: 12px; font-weight: 300; position: absolute; bottom: 20px; right: 0;}
@@ -212,6 +213,7 @@ body.mobile{
     #twitter{margin-left: 85px;}
     #rdio{margin-left: 85px;}
     #blog{margin-left: 94px;}
+    #pinterest{margin-left: 101px;}
     #facebook{margin-left: 81px;}
     #linkedin{margin-left: 64px;}
     #qrcardus{margin-left: 91px;}

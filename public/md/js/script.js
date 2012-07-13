@@ -2,7 +2,8 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     mode: "gfm"
   , matchBrackets: false
   , lineWrapping: true
-  , keyMap: "default"
+  , keyMap: "vim"
+  , theme: "marky-light"
   , autofocus: true
   , saveFunction: function() {
       localStorage['content'] = editor.getValue()
@@ -49,6 +50,11 @@ $(document).ready( function() {
 
   $("#full-screen").bind('click', function() {
     toggleFullScreen()
+  })
+
+  $("#clear").bind('click', function() {
+    editor.setValue('')
+    localStorage.clear()
   })
 
 })
