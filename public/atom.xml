@@ -4,7 +4,7 @@
   <title><![CDATA[Connor Montgomery]]></title>
   <link href="http://cnnr.me//atom.xml" rel="self"/>
   <link href="http://cnnr.me//"/>
-  <updated>2012-08-06T23:29:54-07:00</updated>
+  <updated>2012-08-06T23:35:45-07:00</updated>
   <id>http://cnnr.me//</id>
   <author>
     <name><![CDATA[Connor Montgomery]]></name>
@@ -334,15 +334,6 @@ adduser</code>). Next, you&#8217;d <code>cd</code> to the root of your project (
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[@checkthisdomain]]></title>
-    <link href="http://cnnr.me//b/2012/04/at-checkthisdomain/"/>
-    <updated>2012-04-11T00:33:00-07:00</updated>
-    <id>http://cnnr.me//b/2012/04/at-checkthisdomain</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[HTML5...plz?]]></title>
     <link href="http://cnnr.me//b/2012/01/html5-dot-dot-dot-plz/"/>
     <updated>2012-01-23T18:09:00-08:00</updated>
@@ -358,15 +349,6 @@ says it best in her <a href="http://nimbupani.com/html5please.html">blog post</a
 
 <p>So, with that being said, can I <a href="http://html5please.us">plz use some
 HTML5&#8217;s</a>?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Here's my octopress theme]]></title>
-    <link href="http://cnnr.me//b/2012/01/heres-my-octopress-theme/"/>
-    <updated>2012-01-17T18:09:00-08:00</updated>
-    <id>http://cnnr.me//b/2012/01/heres-my-octopress-theme</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
@@ -645,36 +627,6 @@ out my <a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-i-made-the
 <code>*</code> is required, becuase it&#8217;s a wildcard character. Basically, that
 means the <code>keysocket-rdio.js</code> file will load at any path within
 <code>http://rdio.com</code>, not just the root path.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Test Blog Post]]></title>
-    <link href="http://cnnr.me//b/2011/12/test-blog-post/"/>
-    <updated>2011-12-28T23:47:00-08:00</updated>
-    <id>http://cnnr.me//b/2011/12/test-blog-post</id>
-    <content type="html"><![CDATA[<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, <a href="http://cnnr.me">nascetur ridiculus</a> mus. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-<h3>Breaking up some of my thoughts with a subhead</h3>
-
-<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-
-<blockquote><p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p></blockquote>
-
-<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-
-<figure>
-  <img src="../images/img.png">
-  <figcaption><strong>Above:</strong> This is an image of a bicicle.</figcaption>
-</figure>
-
-
-<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-
-<script src="https://gist.github.com/1218637.js?file=newSite.sh"></script>
-
-
-<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 ]]></content>
   </entry>
   
